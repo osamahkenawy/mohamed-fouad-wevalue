@@ -1,113 +1,142 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { ANA_BRAND } from './data';
-
-const COLS = [
-  {
-    title: 'Explore',
-    items: [
-      { label: 'About ANA', href: '/about' },
-      { label: 'Collections', href: '/#collections' },
-      { label: 'Zodiac Candles', href: '/#zodiac' },
-      { label: 'Gifts', href: '/#gifts' },
-    ],
-  },
-  {
-    title: 'Care',
-    items: [
-      { label: 'Contact', href: '/#contact' },
-      { label: 'WhatsApp Order', href: ANA_BRAND.whatsappLink, external: true },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Terms', href: '/terms' },
-    ],
-  },
-];
+import { BRAND, NAV_LINKS, SERVICES, SOCIAL_LINKS } from './data';
 
 const Footer: React.FC = () => (
-  <footer className="border-t border-ana-gold/10 bg-ana-ink">
-    <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
-      <div className="md:col-span-1">
-        <Link href="/" className="inline-block">
-          <Image
-            src="/images/ana/logos/ana-logo.png"
-            alt="ANA Candles"
-            width={64}
-            height={64}
-            className="w-14 h-14 object-contain"
-          />
+  <footer className="border-t border-mf-gold/10 bg-mf-navy-dark">
+    <div className="mf-container py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+      {/* Logo & tagline */}
+      <div className="lg:col-span-1">
+        <Link href="/" className="inline-flex items-center gap-3">
+          <div className="w-10 h-10 border-2 border-mf-gold rounded-lg flex items-center justify-center">
+            <span className="text-mf-gold font-bold text-[16px]">M</span>
+          </div>
+          <div>
+            <p className="text-mf-cream font-bold text-[13px] leading-tight">MOHAMED</p>
+            <p className="text-mf-cream font-bold text-[13px] leading-tight">AHMED FOUAD</p>
+            <p className="text-mf-gold text-[8px] tracking-[0.15em] uppercase">Real Estate Expert</p>
+          </div>
         </Link>
-        <p className="mt-6 text-ana-cream/60 text-[13px] leading-relaxed max-w-xs">
-          Luxury zodiac-inspired candles crafted for elegant moments, cozy
-          nights, and meaningful gifts.
-        </p>
       </div>
 
-      {COLS.map((col) => (
-        <div key={col.title}>
-          <h4 className="ana-eyebrow text-ana-gold font-sans">{col.title}</h4>
-          <ul className="mt-6 space-y-3">
-            {col.items.map((item: any) =>
-              item.external ? (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-ana-cream/75 hover:text-ana-gold text-[14px] transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ) : (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-ana-cream/75 hover:text-ana-gold text-[14px] transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              )
-            )}
-          </ul>
-        </div>
-      ))}
-
+      {/* Quick Links */}
       <div>
-        <h4 className="ana-eyebrow text-ana-gold font-sans">Contact</h4>
-        <ul className="mt-6 space-y-3 text-ana-cream/75 text-[14px]">
-          <li>{ANA_BRAND.city}</li>
-          <li>
-            <a
-              href={ANA_BRAND.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-ana-gold transition-colors"
-            >
-              {ANA_BRAND.whatsappNumber}
-            </a>
+        <h4 className="text-mf-cream font-sans text-[14px] font-semibold mb-5">Quick Links</h4>
+        <ul className="space-y-3">
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="text-mf-text-muted hover:text-mf-gold text-[13px] transition-colors"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Services */}
+      <div>
+        <h4 className="text-mf-cream font-sans text-[14px] font-semibold mb-5">Services</h4>
+        <ul className="space-y-3">
+          {SERVICES.map((svc) => (
+            <li key={svc.title}>
+              <Link
+                href="/#services"
+                className="text-mf-text-muted hover:text-mf-gold text-[13px] transition-colors"
+              >
+                {svc.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Contact Info */}
+      <div>
+        <h4 className="text-mf-cream font-sans text-[14px] font-semibold mb-5">Contact Info</h4>
+        <ul className="space-y-3 text-mf-text-muted text-[13px]">
+          <li className="flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-mf-gold shrink-0">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            {BRAND.phone}
           </li>
-          <li>
-            <a
-              href={`mailto:${ANA_BRAND.email}`}
-              className="hover:text-ana-gold transition-colors"
-            >
-              {ANA_BRAND.email}
-            </a>
+          <li className="flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-mf-gold shrink-0">
+              <rect x="2" y="4" width="20" height="16" rx="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M22 7l-10 7L2 7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <a href={`mailto:${BRAND.email}`} className="hover:text-mf-gold transition-colors">{BRAND.email}</a>
+          </li>
+          <li className="flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-mf-gold shrink-0">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="12" cy="10" r="3" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            {BRAND.city}
           </li>
         </ul>
       </div>
+
+      {/* Follow Me */}
+      <div>
+        <h4 className="text-mf-cream font-sans text-[14px] font-semibold mb-5">Follow Me</h4>
+        <div className="flex items-center gap-3">
+          {SOCIAL_LINKS.map((social) => (
+            <a
+              key={social.platform}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.platform}
+              className="w-9 h-9 rounded-full border border-mf-text-muted/30 flex items-center justify-center text-mf-text-muted hover:border-mf-gold hover:text-mf-gold transition-colors"
+            >
+              <SocialIcon platform={social.platform} />
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
 
-    <div className="border-t border-ana-gold/10">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[12px] text-ana-cream/50 tracking-wider">
-        <p>© {new Date().getFullYear()} ANA Candles. All rights reserved.</p>
-        <p className="uppercase tracking-[0.28em]">
-          A Candle That Feels Like You
-        </p>
+    {/* Bottom bar */}
+    <div className="border-t border-mf-gold/10">
+      <div className="mf-container py-5 flex flex-col md:flex-row items-center justify-center text-[12px] text-mf-text-muted/70">
+        <p>&copy; {new Date().getFullYear()} Mohamed Ahmed Fouad Amin. All rights reserved.</p>
       </div>
     </div>
   </footer>
 );
+
+function SocialIcon({ platform }: { platform: string }) {
+  switch (platform) {
+    case 'linkedin':
+      return (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      );
+    case 'twitter':
+      return (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      );
+    case 'instagram':
+      return (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+      );
+    case 'youtube':
+      return (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
 
 export default Footer;

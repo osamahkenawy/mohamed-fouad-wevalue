@@ -31,7 +31,7 @@ const Layout: React.FC<Props> = ({
       type={type}
       noIndex={noIndex}
     />
-    <div className="bg-ana-ink text-ana-cream min-h-screen flex flex-col">
+    <div className="bg-mf-navy text-mf-cream min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />

@@ -1,57 +1,90 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowRight, Sparkle } from '../icons';
+import { BRAND } from '../data';
 
 const Hero: React.FC = () => (
-  <section className="relative min-h-[88vh] lg:min-h-screen flex items-center overflow-hidden">
-    {/* Background banner */}
-    <div className="absolute inset-0">
-      <Image
-        src="/images/ana/bg/background-banner.png"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-ana-ink via-ana-ink/85 to-ana-ink/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ana-ink/90 via-transparent to-ana-ink/40" />
+  <section className="relative min-h-screen flex items-center overflow-hidden">
+    {/* Background image placeholder - replace with actual Dubai skyline */}
+    <div className="absolute inset-0 bg-mf-navy">
+      <div className="absolute inset-0 bg-gradient-to-r from-mf-navy via-mf-navy/90 to-mf-navy/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-mf-navy via-transparent to-mf-navy/60" />
+      {/* Right side: person image area */}
+      <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
+        <div className="absolute inset-0 bg-gradient-to-r from-mf-navy to-transparent z-10" />
+        {/* Placeholder for hero portrait */}
+        <div className="absolute inset-0 bg-mf-navy-light/50" />
+      </div>
     </div>
 
-    <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 lg:px-12 pt-28 pb-20">
-      <div className="max-w-xl animate-fade-up">
-        <p className="flex items-center gap-3 ana-eyebrow">
-          <span className="ana-divider" />
-          <Sparkle className="text-ana-gold" />
-          Zodiac Inspired
+    <div className="relative z-10 mf-container w-full pt-32 pb-20">
+      <div className="max-w-2xl">
+        {/* Eyebrow */}
+        <p className="flex items-center gap-3 mf-eyebrow">
+          <span className="mf-divider" />
+          {BRAND.title}
         </p>
 
-        <h1 className="mt-8 font-serif text-ana-cream text-[56px] lg:text-[78px] leading-[1.02]">
-          A Candle That
+        {/* Headline */}
+        <h1 className="mt-8 text-mf-cream text-[48px] lg:text-[72px] leading-[1.05] font-bold italic">
+          Guiding Excellence
           <br />
-          <em className="not-italic font-serif text-ana-gold italic">
-            Feels Like You
-          </em>
+          In <span className="text-mf-gold">Real Estate</span>
         </h1>
 
-        <span className="block mt-8 ana-divider" />
-
-        <p className="mt-7 text-ana-cream/75 text-[15px] leading-[1.8] max-w-md">
-          Luxury zodiac candles crafted for elegant moments, cozy nights, and
-          meaningful gifts.
+        {/* Description */}
+        <p className="mt-8 text-mf-text-muted text-[15px] leading-[1.8] max-w-lg">
+          A seasoned business owner of Alfouad valuation in Dubai renowned for his
+          strategic vision and negotiation prowess in the real estate industry.
         </p>
 
+        {/* CTA */}
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/#collections" className="ana-btn-primary">
-            Shop Collection <ArrowRight />
-          </Link>
-          <Link href="/#zodiac" className="ana-btn-ghost">
-            Your Sign, Your Candle
-          </Link>
+          <a href="/#biography" className="mf-btn-primary">
+            Discover More About Mr. Amin
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+        {/* Trust badges */}
+        <div className="mt-16 flex flex-wrap gap-8 lg:gap-12">
+          <TrustBadge icon="vision" title="Strategic Vision" desc="Future-focused approach" />
+          <TrustBadge icon="expertise" title="Trusted Expertise" desc="Decades of proven experience" />
+          <TrustBadge icon="results" title="Results Driven" desc="Maximizing value, delivering success" />
+        </div>
+      </div>
+
+      {/* Watch Introduction */}
+      <div className="absolute right-12 bottom-20 hidden lg:flex items-center gap-3">
+        <div className="w-14 h-14 rounded-full border-2 border-mf-gold flex items-center justify-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-mf-gold ml-1">
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+        </div>
+        <div>
+          <p className="text-mf-cream text-[13px] font-medium">Watch</p>
+          <p className="text-mf-cream text-[13px] font-medium">Introduction</p>
         </div>
       </div>
     </div>
   </section>
 );
+
+function TrustBadge({ icon, title, desc }: { icon: string; title: string; desc: string }) {
+  return (
+    <div className="flex items-center gap-3">
+      <div className="w-10 h-10 rounded-full border border-mf-gold/40 flex items-center justify-center">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-mf-gold">
+          {icon === 'vision' && <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" strokeLinecap="round" strokeLinejoin="round" />}
+          {icon === 'expertise' && <><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" strokeLinecap="round" strokeLinejoin="round" /></>}
+          {icon === 'results' && <><path d="M22 11.08V12a10 10 0 11-5.93-9.14" strokeLinecap="round" strokeLinejoin="round" /><path d="M22 4L12 14.01l-3-3" strokeLinecap="round" strokeLinejoin="round" /></>}
+        </svg>
+      </div>
+      <div>
+        <p className="text-mf-cream text-[13px] font-semibold">{title}</p>
+        <p className="text-mf-text-muted text-[11px]">{desc}</p>
+      </div>
+    </div>
+  );
+}
 
 export default Hero;

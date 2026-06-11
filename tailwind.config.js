@@ -28,7 +28,7 @@ module.exports = {
     },
     fontFamily: {
       open: ['Open Sans'],
-      serif: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+      serif: ['"Playfair Display"', 'Cormorant Garamond', 'serif'],
       sans: ['Inter', 'Open Sans', 'sans-serif'],
     },
     fontSize: {
@@ -51,16 +51,28 @@ module.exports = {
       //   'xxxl': { raw: '1600px' },
       // },
       colors: {
-        // ANA brand palette
-        ana: {
-          ink: '#0B0B0B',
-          black: '#111111',
-          charcoal: '#1a1a1a',
+        // Mohamed Fouad brand palette
+        mf: {
+          navy: '#0A1628',
+          'navy-light': '#0F1E35',
+          'navy-dark': '#060E1A',
           gold: '#C9A24B',
           'gold-light': '#E0C57C',
           'gold-dark': '#9A7A2E',
-          beige: '#F2E8D5',
-          cream: '#FAF6EC',
+          cream: '#F5F0E8',
+          white: '#FFFFFF',
+          'text-muted': '#8B9DB5',
+        },
+        // Keep ana aliases for gradual migration
+        ana: {
+          ink: '#0A1628',
+          black: '#060E1A',
+          charcoal: '#0F1E35',
+          gold: '#C9A24B',
+          'gold-light': '#E0C57C',
+          'gold-dark': '#9A7A2E',
+          beige: '#F5F0E8',
+          cream: '#F5F0E8',
           sand: '#D9C9A3',
         },
         green: '#209F85',

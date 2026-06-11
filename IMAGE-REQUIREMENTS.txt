@@ -1,0 +1,242 @@
+MOHAMED AHMED FOUAD WEBSITE — IMAGE REQUIREMENTS & AI PROMPTS
+================================================================
+
+Brand colors: Navy #0A1628  |  Gold #C9A24B  |  Cream #F5F0E8
+All images go inside: /public/images/mf/
+Use these prompts in: Midjourney, DALL-E 3, Adobe Firefly, or Leonardo AI
+
+
+════════════════════════════════════════════════════════════════
+1. HERO SECTION
+════════════════════════════════════════════════════════════════
+
+FILE: hero-bg.jpg
+SIZE: 1920 x 1080 px
+ASPECT RATIO: --ar 16:9
+
+PROMPT:
+"Cinematic panoramic view of Dubai skyline at night, Burj Khalifa and skyscrapers
+illuminated with warm golden lights reflecting on water, ultra wide angle shot,
+deep dark navy blue sky #0A1628, golden warm city glow, luxury real estate mood,
+long exposure photography, ultra realistic, 8K, no people, dark moody atmosphere,
+left side slightly darker for text overlay"
+
+────────────────────────────────────────────────────────────────
+
+FILE: hero-portrait.png
+SIZE: 800 x 1000 px
+ASPECT RATIO: --ar 4:5
+NOTE: Use a real photo of Mohamed — do NOT generate a face with AI.
+      If no photo available, use this prompt for a placeholder:
+
+PROMPT:
+"Professional Middle Eastern businessman, mid 50s, bald head, well-groomed beard,
+wearing a dark navy tailored suit with a burgundy/wine-colored tie, sitting in a
+luxury leather chair, confident posture, slight forward lean, hands clasped,
+warm studio lighting from the left, blurred bokeh office background,
+dark and moody tone, subject positioned on right side of frame, chest up portrait,
+ultra realistic photography, 8K quality, dark background blends to #0A1628"
+
+
+════════════════════════════════════════════════════════════════
+2. BIOGRAPHY SECTION
+════════════════════════════════════════════════════════════════
+
+FILE: bio-portrait.jpg
+SIZE: 600 x 800 px
+ASPECT RATIO: --ar 3:4
+NOTE: Use a real photo of Mohamed — do NOT generate a face with AI.
+      If no photo available, use this prompt for a placeholder:
+
+PROMPT:
+"Professional formal headshot of a Middle Eastern male real estate executive,
+mid 50s, bald, confident smile, wearing a dark navy blue suit with white shirt
+and gold tie pin, warm amber studio lighting, shallow depth of field,
+luxury bookshelf or wood-paneled office background softly blurred,
+professional corporate photography style, warm tone, sharp focus on face,
+ultra realistic, photorealistic, 4K"
+
+
+════════════════════════════════════════════════════════════════
+3. SERVICES SECTION
+════════════════════════════════════════════════════════════════
+
+FILE: services-office.jpg
+SIZE: 800 x 1000 px
+ASPECT RATIO: --ar 4:5
+
+PROMPT:
+"Luxury real estate office interior, Dubai high-rise building, floor-to-ceiling
+glass windows overlooking city skyline at dusk, dark navy and gold interior design,
+executive mahogany desk with architectural blueprints and scale models,
+warm golden accent lighting, leather chairs, premium minimalist decor,
+no people, ultra realistic interior architecture photography,
+moody cinematic lighting, 8K, dark rich tones"
+
+
+════════════════════════════════════════════════════════════════
+4. MEDIA & PARTNERSHIPS (8 carousel images)
+════════════════════════════════════════════════════════════════
+
+FILE: media-1.jpg
+SIZE: 320 x 240 px  |  ASPECT RATIO: --ar 4:3
+
+PROMPT:
+"Professional business conference in Dubai, group of Arab businessmen in suits
+shaking hands on stage, elegant hotel ballroom setting, warm golden lighting,
+audience in background, real estate investment summit, cinematic photography,
+shallow depth of field, luxury event atmosphere"
+
+────────────────────────────────────────────────────────────────
+
+FILE: media-2.jpg
+SIZE: 320 x 240 px  |  ASPECT RATIO: --ar 4:3
+
+PROMPT:
+"TV studio interview setting, Middle Eastern business news channel, two men
+in suits sitting across from each other at a sleek glass desk, professional
+broadcast lighting, large screen with real estate graphs in background,
+Arabic news channel set design, modern and corporate, cinematic"
+
+────────────────────────────────────────────────────────────────
+
+FILE: media-3.jpg
+SIZE: 320 x 240 px  |  ASPECT RATIO: --ar 4:3
+
+PROMPT:
+"Real estate awards ceremony, Dubai, businessman receiving a crystal trophy on
+stage, formal black-tie event, elegant ballroom with chandeliers, gold and navy
+color scheme, spotlight on stage, applauding audience, luxury gala atmosphere,
+cinematic photography"
+
+────────────────────────────────────────────────────────────────
+
+FILE: media-4.jpg
+SIZE: 320 x 240 px  |  ASPECT RATIO: --ar 4:3
+
+PROMPT:
+"Executive panel discussion at a luxury real estate conference, three men in
+tailored suits seated at a modern conference table with microphones, Dubai
+convention center, premium stage design with MENA real estate branding,
+professional event photography, warm lighting"
+
+────────────────────────────────────────────────────────────────
+
+FILE: media-5.jpg
+SIZE: 320 x 240 px  |  ASPECT RATIO: --ar 4:3
+
+PROMPT:
+"Business partnership signing ceremony, two Arab executives in dark suits
+signing a document at a polished conference table, Dubai skyline visible
+through floor-to-ceiling windows, formal corporate photography,
+firm handshake moment, gold fountain pen, luxury office setting"
+
+────────────────────────────────────────────────────────────────
+
+FILE: media-6.jpg
+SIZE: 320 x 240 px  |  ASPECT RATIO: --ar 4:3
+
+PROMPT:
+"Real estate property valuation site visit, professional surveyor in suit
+with clipboard inspecting a modern luxury residential building in Dubai,
+golden hour lighting, palm trees and glass facade building in background,
+UAE real estate development, documentary style photography"
+
+────────────────────────────────────────────────────────────────
+
+FILE: media-7.jpg
+SIZE: 320 x 240 px  |  ASPECT RATIO: --ar 4:3
+
+PROMPT:
+"International property investment forum, large auditorium with Arab and
+international business delegates, speaker at podium with presentation
+screen showing UAE real estate market charts, CITYSCAPE DUBAI style event,
+wide angle shot, professional event photography, bright stage lighting"
+
+────────────────────────────────────────────────────────────────
+
+FILE: media-8.jpg
+SIZE: 320 x 240 px  |  ASPECT RATIO: --ar 4:3
+
+PROMPT:
+"Corporate team photo of real estate professionals in Dubai office,
+diverse group of five executives in suits standing in front of floor-to-ceiling
+windows with Dubai skyline in background, formal business portrait,
+confident poses, warm afternoon light, ultra realistic photography"
+
+
+════════════════════════════════════════════════════════════════
+5. LOGO — Use a designer tool (Illustrator / Canva / Figma)
+════════════════════════════════════════════════════════════════
+
+FILE: logo.png
+SIZE: 200 x 200 px
+NOTE: AI image generators are NOT ideal for logos with text. Use Canva, Illustrator, or Figma.
+
+DESIGN BRIEF:
+"Letter M monogram logo. Elegant serif or geometric M letterform.
+Color: solid gold #C9A24B on transparent background.
+Style: luxury, real estate, minimal. No gradients. Clean vector.
+Optional: thin horizontal line below the M, or double-line border frame."
+
+────────────────────────────────────────────────────────────────
+
+FILE: logo-full.png
+SIZE: 400 x 120 px
+
+DESIGN BRIEF:
+"Horizontal logo lockup. Left: gold M monogram icon in a square border.
+Right: stacked text — top line 'MOHAMED' bold, second line 'AHMED FOUAD' bold,
+third line 'REAL ESTATE EXPERT' in small gold caps with wide letter-spacing.
+All in gold #C9A24B on transparent background. Font: Playfair Display or similar serif."
+
+
+════════════════════════════════════════════════════════════════
+6. OG / SOCIAL SHARING IMAGE
+════════════════════════════════════════════════════════════════
+
+FILE: og-image.png
+SIZE: 1200 x 630 px
+NOTE: Best created in Figma/Canva using real photo. For AI placeholder:
+
+PROMPT:
+"Professional social media preview card design, dark navy blue background #0A1628,
+left side: large bold white text 'Mohamed Ahmed Fouad' with gold subtitle
+'Real Estate Expert | Dubai UAE', gold decorative horizontal rule,
+right side: professional headshot placeholder silhouette,
+gold geometric accent lines, minimal luxury design, 1200x630 format,
+clean typographic layout, no clutter"
+
+
+════════════════════════════════════════════════════════════════
+7. FAVICON — Generate from logo.png
+════════════════════════════════════════════════════════════════
+
+favicon.ico          — 48 x 48 px
+favicon-32x32.png    — 32 x 32 px
+favicon-16x16.png    — 16 x 16 px
+apple-touch-icon.png — 180 x 180 px
+
+TOOL: Once logo.png is ready, go to https://realfavicongenerator.net
+      Upload logo.png → it will generate all favicon sizes automatically.
+
+DESIGN NOTE FOR FAVICON:
+"Gold letter M on dark navy square background #0A1628, rounded corners,
+bold and readable at 16px size"
+
+
+════════════════════════════════════════════════════════════════
+GLOBAL STYLE NOTES FOR ALL PROMPTS
+════════════════════════════════════════════════════════════════
+
+Add these quality tags to the END of every prompt:
+  --ar [ratio]  --v 6  --style raw  --q 2
+
+Recommended tools:
+  - Midjourney v6       → best for photorealistic scenes
+  - DALL-E 3 (ChatGPT)  → good for specific compositions
+  - Adobe Firefly       → best for stock-safe commercial use
+  - Leonardo AI         → good free alternative
+
+DO NOT use AI for: logo, favicon, og-image (use Figma/Canva instead)
+DO NOT use AI for: any portrait of Mohamed (use real photographs)

@@ -1,54 +1,18 @@
-import Image from 'next/image';
-import { ZODIAC_SIGNS } from '../data';
-import { Sparkle } from '../icons';
+import { STATS } from '../data';
 
-const Zodiac: React.FC = () => (
-  <section id="zodiac" className="relative py-24 lg:py-32 overflow-hidden">
-    {/* subtle background */}
-    <div className="absolute inset-0 -z-10">
-      <Image
-        src="/images/ana/bg/background-banner.png"
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover object-center opacity-20"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-ana-ink via-ana-ink/85 to-ana-ink" />
-    </div>
-
-    <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-      <div className="text-center max-w-2xl mx-auto">
-        <p className="ana-eyebrow inline-flex items-center gap-2">
-          <Sparkle /> Zodiac Candles
-        </p>
-        <h2 className="mt-5 font-serif text-ana-cream text-[40px] lg:text-[48px] leading-[1.1]">
-          Your Sign, Your Candle
-        </h2>
-        <span className="block mt-6 ana-divider mx-auto" />
-        <p className="mt-6 text-ana-cream/70 text-[15px] leading-[1.8]">
-          Twelve birth date candles, each scented to match the energy, element,
-          and essence of a zodiac sign.
-        </p>
-      </div>
-
-      <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
-        {ZODIAC_SIGNS.map((z) => (
-          <div key={z.slug} className="group text-center">
-            <div className="relative aspect-square overflow-hidden border border-ana-gold/10 group-hover:border-ana-gold/40 transition-colors">
-              <Image
-                src={z.image}
-                alt={z.name}
-                fill
-                sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
-                className="object-cover object-center group-hover:scale-[1.04] transition-transform duration-700"
-              />
+const StatsBar: React.FC = () => (
+  <section id="achievements" className="py-16 bg-mf-navy border-y border-mf-gold/10">
+    <div className="mf-container">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {STATS.map((stat) => (
+          <div key={stat.label} className="flex items-center gap-4">
+            <div className="w-14 h-14 rounded-full bg-mf-gold/10 border border-mf-gold/20 flex items-center justify-center shrink-0">
+              <StatBarIcon label={stat.label} />
             </div>
-            <h3 className="mt-5 font-serif text-ana-cream text-[20px]">
-              {z.name}
-            </h3>
-            <p className="mt-1 text-ana-cream/55 text-[11px] tracking-[0.22em] uppercase">
-              {z.dates}
-            </p>
+            <div>
+              <p className="text-mf-gold text-[26px] lg:text-[30px] font-bold leading-tight">{stat.value}</p>
+              <p className="text-mf-text-muted text-[12px] mt-0.5">{stat.label}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -56,4 +20,15 @@ const Zodiac: React.FC = () => (
   </section>
 );
 
-export default Zodiac;
+function StatBarIcon({ label }: { label: string }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-mf-gold">
+      {label.includes('Experience') && <><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" strokeLinecap="round" /></>}
+      {label.includes('Projects') && <><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 21V9" strokeLinecap="round" /></>}
+      {label.includes('Clients') && <><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" /></>}
+      {label.includes('Market') && <><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" /></>}
+    </svg>
+  );
+}
+
+export default StatsBar;

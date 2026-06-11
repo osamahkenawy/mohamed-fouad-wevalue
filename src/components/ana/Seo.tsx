@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import {
-  ANA_BRAND,
+  BRAND,
   DEFAULT_DESCRIPTION,
   DEFAULT_OG_IMAGE,
   DEFAULT_TITLE,
@@ -11,9 +11,7 @@ import {
 type SeoProps = {
   title?: string;
   description?: string;
-  /** Path under /public OR absolute URL. 16:9 ~1200x630+ recommended. */
   image?: string;
-  /** Override canonical (defaults to current path). */
   canonical?: string;
   type?: 'website' | 'article' | 'product';
   noIndex?: boolean;
@@ -35,34 +33,36 @@ const Seo: React.FC<SeoProps> = ({
 }) => {
   const router = useRouter();
   const pageTitle = title
-    ? `${title} — ${ANA_BRAND.name}`
+    ? `${title} — ${BRAND.name}`
     : DEFAULT_TITLE;
   const url = toAbsolute(canonical ?? router.asPath?.split('?')[0] ?? '/');
   const imageUrl = toAbsolute(image);
 
-  const orgJsonLd = {
+  const personJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: ANA_BRAND.name,
+    '@type': 'Person',
+    name: BRAND.fullName,
+    jobTitle: BRAND.title,
     url: SITE_URL,
-    logo: toAbsolute('/images/ana/logos/ana-logo.png'),
     image: imageUrl,
     description: DEFAULT_DESCRIPTION,
-    slogan: ANA_BRAND.tagline,
-    email: ANA_BRAND.email,
-    telephone: ANA_BRAND.whatsappNumber,
+    email: BRAND.email,
+    telephone: BRAND.phone,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Dubai',
-      addressCountry: ANA_BRAND.country,
+      addressCountry: BRAND.country,
     },
-    sameAs: [ANA_BRAND.whatsappLink],
+    worksFor: {
+      '@type': 'Organization',
+      name: BRAND.company,
+    },
   };
 
   const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: ANA_BRAND.name,
+    name: BRAND.name,
     url: SITE_URL,
     inLanguage: 'en',
   };
@@ -84,7 +84,7 @@ const Seo: React.FC<SeoProps> = ({
 
       {/* Open Graph */}
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content={ANA_BRAND.name} />
+      <meta property="og:site_name" content={BRAND.name} />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
@@ -93,7 +93,7 @@ const Seo: React.FC<SeoProps> = ({
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1920" />
       <meta property="og:image:height" content="1080" />
-      <meta property="og:image:alt" content={`${ANA_BRAND.name} — ${ANA_BRAND.tagline}`} />
+      <meta property="og:image:alt" content={`${BRAND.name} — ${BRAND.title}`} />
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
@@ -101,12 +101,12 @@ const Seo: React.FC<SeoProps> = ({
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
-      <meta name="twitter:image:alt" content={`${ANA_BRAND.name} — ${ANA_BRAND.tagline}`} />
+      <meta name="twitter:image:alt" content={`${BRAND.name} — ${BRAND.title}`} />
 
       {/* JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
       <script
         type="application/ld+json"

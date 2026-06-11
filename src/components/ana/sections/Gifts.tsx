@@ -1,67 +1,48 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { ANA_BRAND, SIGNATURE_SCENTS } from '../data';
-import { ArrowRight, Sparkle, WhatsAppIcon } from '../icons';
+const MEDIA_IMAGES = Array.from({ length: 8 }, (_, i) => ({
+  id: i + 1,
+  alt: `Media appearance ${i + 1}`,
+}));
 
-const Gifts: React.FC = () => (
-  <section id="gifts" className="py-24 lg:py-32 bg-ana-ink">
-    <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-      <div className="max-w-md">
-        <p className="ana-eyebrow inline-flex items-center gap-2">
-          <Sparkle /> Gifts
-        </p>
-        <h2 className="mt-5 font-serif text-ana-cream text-[40px] lg:text-[44px] leading-[1.15]">
-          Wrapped in black
-          <br />
-          and brushed gold.
-        </h2>
+const Media: React.FC = () => (
+  <section id="media" className="mf-section bg-mf-navy">
+    <div className="mf-container">
+      <h2 className="text-mf-cream text-[32px] lg:text-[40px] font-bold">
+        Media & Partnerships
+      </h2>
 
-        <span className="block mt-8 ana-divider" />
-
-        <p className="mt-7 text-ana-cream/75 text-[15px] leading-[1.9]">
-          Every ANA candle arrives in a luxurious gift box — designed for
-          birthdays, anniversaries, weddings, and the quiet moments worth
-          remembering.
-        </p>
-        <p className="mt-5 text-ana-cream/75 text-[15px] leading-[1.9]">
-          Choose a scent, choose a sign, and we&apos;ll wrap it beautifully.
-        </p>
-
-        <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/#collections" className="ana-btn-primary">
-            Explore Gifting <ArrowRight />
-          </Link>
-          <a
-            href={ANA_BRAND.whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ana-btn-ghost"
-          >
-            <WhatsAppIcon /> Order on WhatsApp
-          </a>
+      {/* Carousel of media images */}
+      <div className="mt-10 relative">
+        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+          {MEDIA_IMAGES.map((img) => (
+            <div
+              key={img.id}
+              className="shrink-0 w-[160px] h-[120px] rounded-xl border border-mf-gold/15 bg-mf-navy-light overflow-hidden flex items-center justify-center"
+            >
+              <span className="text-mf-text-muted text-[11px]">Media {img.id}</span>
+            </div>
+          ))}
         </div>
-      </div>
 
-      <div className="grid grid-cols-2 gap-5">
-        {SIGNATURE_SCENTS.map((s, i) => (
-          <div
-            key={s.slug}
-            className={`relative aspect-square border border-ana-gold/15 overflow-hidden ${
-              i % 2 === 1 ? 'lg:-translate-y-6' : ''
-            }`}
-          >
-            <Image
-              src={s.image}
-              alt={s.name}
-              fill
-              sizes="(min-width: 1024px) 25vw, 50vw"
-              className="object-cover object-center"
-            />
-          </div>
-        ))}
+        {/* Navigation arrows */}
+        <button
+          aria-label="Previous"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 rounded-full border border-mf-gold bg-mf-navy flex items-center justify-center text-mf-gold hover:bg-mf-gold hover:text-mf-navy transition-colors"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        <button
+          aria-label="Next"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 rounded-full border border-mf-gold bg-mf-navy flex items-center justify-center text-mf-gold hover:bg-mf-gold hover:text-mf-navy transition-colors"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
       </div>
     </div>
   </section>
 );
 
-export default Gifts;
+export default Media;
