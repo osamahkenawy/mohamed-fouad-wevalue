@@ -28,12 +28,10 @@ const Services: React.FC = () => (
           </div>
         </div>
 
-        {/* Right image placeholder */}
+        {/* Right image */}
         <div className="lg:col-span-5 hidden lg:block">
           <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-mf-navy border border-mf-gold/10">
-            <div className="w-full h-full flex items-center justify-center text-mf-text-muted text-[14px]">
-              Office / Meeting Image
-            </div>
+            <img src="/images/mf/services-office.png" alt="Luxury real estate office" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>

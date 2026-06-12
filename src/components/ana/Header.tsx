@@ -32,16 +32,8 @@ const Header: React.FC = () => {
     >
       <div className="mf-container py-5 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="shrink-0 inline-flex items-center gap-3" aria-label="Home">
-          {/* Logo icon */}
-          <div className="w-10 h-10 border-2 border-mf-gold rounded-lg flex items-center justify-center">
-            <span className="text-mf-gold font-bold text-[16px]">M</span>
-          </div>
-          <div className="hidden sm:block">
-            <p className="text-mf-cream font-bold text-[14px] leading-tight tracking-wide">MOHAMED</p>
-            <p className="text-mf-cream font-bold text-[14px] leading-tight tracking-wide">AHMED FOUAD</p>
-            <p className="text-mf-gold text-[9px] tracking-[0.2em] uppercase">Real Estate Expert</p>
-          </div>
+        <Link href="/" className="shrink-0" aria-label="Home">
+          <img src="/images/mf/mohamed-logo.png" alt="Mohamed Ahmed Fouad" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
@@ -65,17 +57,11 @@ const Header: React.FC = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          {/* Language toggle */}
-          <button className="hidden md:flex items-center gap-1 text-mf-cream text-[13px] font-medium border border-mf-cream/30 px-3 py-1.5 rounded">
-            EN
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-
           {/* CTA Button */}
           <a
-            href={`mailto:${BRAND.email}`}
+            href="https://wa.me/971585899995"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:inline-flex mf-btn-primary"
           >
             Get In Touch
@@ -120,7 +106,9 @@ const Header: React.FC = () => {
               </Link>
             ))}
             <a
-              href={`mailto:${BRAND.email}`}
+              href="https://wa.me/971585899995"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 mf-btn-primary w-fit"
             >
               Get In Touch

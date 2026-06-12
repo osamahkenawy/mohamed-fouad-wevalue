@@ -6,10 +6,7 @@ const About: React.FC = () => (
       {/* Portrait */}
       <div className="lg:col-span-4">
         <div className="relative aspect-[3/4] w-full max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden border-2 border-mf-gold/20 bg-mf-navy-light">
-          {/* Placeholder for Mohamed's portrait */}
-          <div className="absolute inset-0 flex items-center justify-center text-mf-text-muted text-[14px]">
-            Portrait Photo
-          </div>
+          <img src="/images/mf/bio-portrait.png" alt="Mohamed Ahmed Fouad" className="absolute inset-0 w-full h-full object-cover" />
         </div>
       </div>
 
@@ -36,8 +33,8 @@ const About: React.FC = () => (
           member of FIABCI and ACAMS.
         </p>
 
-        <a href="/#contact" className="mt-8 mf-btn-ghost inline-flex">
-          Read Full Biography
+        <a href={BRAND.whatsappLink} target="_blank" rel="noopener noreferrer" className="mt-8 mf-btn-ghost inline-flex">
+          Get In Touch
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

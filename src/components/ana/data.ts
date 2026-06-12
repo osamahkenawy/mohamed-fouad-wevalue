@@ -4,8 +4,8 @@ export const BRAND = {
   title: 'Real Estate Expert',
   company: 'Alfouad Group',
   tagline: 'Guiding Excellence In Real Estate',
-  phone: '+971 58 575 2999',
-  whatsappLink: 'https://wa.me/971585752999',
+  phone: '+971 58 589 9995',
+  whatsappLink: 'https://wa.me/971585899995',
   email: 'info@mohamedahmedfouad.com',
   city: 'Dubai, United Arab Emirates',
   country: 'AE',
@@ -77,8 +77,8 @@ export const STATS: Stat[] = [
 ];
 
 export const SOCIAL_LINKS = [
-  { platform: 'linkedin', url: '#' },
-  { platform: 'twitter', url: '#' },
-  { platform: 'instagram', url: '#' },
-  { platform: 'youtube', url: '#' },
+  { platform: 'linkedin', url: 'https://www.linkedin.com/in/mohamedahmedfouad' },
+  { platform: 'twitter', url: 'https://twitter.com/mohamedahmedfouad' },
+  { platform: 'instagram', url: 'https://instagram.com/mohamedahmedfouad' },
+  { platform: 'youtube', url: 'https://youtube.com/@mohamedahmedfouad' },
 ];

@@ -2,15 +2,15 @@ import { BRAND } from '../data';
 
 const Hero: React.FC = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    {/* Background image placeholder - replace with actual Dubai skyline */}
+    {/* Background image */}
     <div className="absolute inset-0 bg-mf-navy">
+      <img src="/images/mf/hero-bg.jpeg" alt="" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-r from-mf-navy via-mf-navy/90 to-mf-navy/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-mf-navy via-transparent to-mf-navy/60" />
-      {/* Right side: person image area */}
+      {/* Right side: person image */}
       <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
         <div className="absolute inset-0 bg-gradient-to-r from-mf-navy to-transparent z-10" />
-        {/* Placeholder for hero portrait */}
-        <div className="absolute inset-0 bg-mf-navy-light/50" />
+        <img src="/images/mf/hero-portrait.png" alt="Mohamed Ahmed Fouad" className="absolute inset-0 w-full h-full object-cover object-top" />
       </div>
     </div>
 
@@ -54,8 +54,13 @@ const Hero: React.FC = () => (
       </div>
 
       {/* Watch Introduction */}
-      <div className="absolute right-12 bottom-20 hidden lg:flex items-center gap-3">
-        <div className="w-14 h-14 rounded-full border-2 border-mf-gold flex items-center justify-center">
+      <a
+        href={BRAND.whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute right-12 bottom-20 hidden lg:flex items-center gap-3 cursor-pointer group"
+      >
+        <div className="w-14 h-14 rounded-full border-2 border-mf-gold flex items-center justify-center group-hover:bg-mf-gold/10 transition-colors">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-mf-gold ml-1">
             <polygon points="5 3 19 12 5 21 5 3" />
           </svg>
@@ -64,7 +69,7 @@ const Hero: React.FC = () => (
           <p className="text-mf-cream text-[13px] font-medium">Watch</p>
           <p className="text-mf-cream text-[13px] font-medium">Introduction</p>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 );

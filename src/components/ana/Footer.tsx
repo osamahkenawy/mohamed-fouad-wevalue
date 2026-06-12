@@ -6,15 +6,8 @@ const Footer: React.FC = () => (
     <div className="mf-container py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
       {/* Logo & tagline */}
       <div className="lg:col-span-1">
-        <Link href="/" className="inline-flex items-center gap-3">
-          <div className="w-10 h-10 border-2 border-mf-gold rounded-lg flex items-center justify-center">
-            <span className="text-mf-gold font-bold text-[16px]">M</span>
-          </div>
-          <div>
-            <p className="text-mf-cream font-bold text-[13px] leading-tight">MOHAMED</p>
-            <p className="text-mf-cream font-bold text-[13px] leading-tight">AHMED FOUAD</p>
-            <p className="text-mf-gold text-[8px] tracking-[0.15em] uppercase">Real Estate Expert</p>
-          </div>
+        <Link href="/" className="inline-block">
+          <img src="/images/mf/mohamed-logo.png" alt="Mohamed Ahmed Fouad" className="h-12 w-auto" />
         </Link>
       </div>
 
